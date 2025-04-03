@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
+import About from './pages/About';
 
 const Container = styled.div`
   height: 100vh;
@@ -80,6 +81,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/about" element={<About />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
         <Route
@@ -97,7 +99,7 @@ function App() {
                 </Title>
                 <NavLinks onMouseLeave={() => setHoveredLink(null)}>
                   <NavLink
-                    to="#about"
+                    to="/about"
                     onHoverStart={() => setHoveredLink('about')}
                     onHoverEnd={() => setHoveredLink(null)}
                     style={{
