@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Resume from './components/Resume';
 
 const Container = styled.div`
   height: 100vh;
@@ -44,7 +46,7 @@ const NavLinks = styled.div`
   margin-top: 2rem;
 `;
 
-const NavLink = styled(motion.a)`
+const NavLink = styled(motion(Link))`
   color: #ffffff;
   text-decoration: none;
   font-size: 1.2rem;
@@ -75,60 +77,66 @@ function App() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
-    <Container>
-      <GlowEffect />
-      <Content>
-        <Title
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Parik Kukreja
-        </Title>
-        <NavLinks>
-          <NavLink
-            href="#about"
-            onHoverStart={() => setHoveredLink('about')}
-            onHoverEnd={() => setHoveredLink(null)}
-            style={{
-              color: hoveredLink === 'about' ? '#00ffff' : '#ffffff',
-            }}
+    <Router>
+      <Container>
+        <GlowEffect />
+        <Content>
+          <Title
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
-            About
-          </NavLink>
-          <NavLink
-            href="#projects"
-            onHoverStart={() => setHoveredLink('projects')}
-            onHoverEnd={() => setHoveredLink(null)}
-            style={{
-              color: hoveredLink === 'projects' ? '#00ffff' : '#ffffff',
-            }}
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            href="#resume"
-            onHoverStart={() => setHoveredLink('resume')}
-            onHoverEnd={() => setHoveredLink(null)}
-            style={{
-              color: hoveredLink === 'resume' ? '#00ffff' : '#ffffff',
-            }}
-          >
-            Resume
-          </NavLink>
-          <NavLink
-            href="#contact"
-            onHoverStart={() => setHoveredLink('contact')}
-            onHoverEnd={() => setHoveredLink(null)}
-            style={{
-              color: hoveredLink === 'contact' ? '#00ffff' : '#ffffff',
-            }}
-          >
-            Contact
-          </NavLink>
-        </NavLinks>
-      </Content>
-    </Container>
+            Parik Kukreja
+          </Title>
+          <NavLinks>
+            <NavLink
+              to="/about"
+              onHoverStart={() => setHoveredLink('about')}
+              onHoverEnd={() => setHoveredLink(null)}
+              style={{
+                color: hoveredLink === 'about' ? '#00ffff' : '#ffffff',
+              }}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/projects"
+              onHoverStart={() => setHoveredLink('projects')}
+              onHoverEnd={() => setHoveredLink(null)}
+              style={{
+                color: hoveredLink === 'projects' ? '#00ffff' : '#ffffff',
+              }}
+            >
+              Projects
+            </NavLink>
+            <NavLink
+              to="/resume"
+              onHoverStart={() => setHoveredLink('resume')}
+              onHoverEnd={() => setHoveredLink(null)}
+              style={{
+                color: hoveredLink === 'resume' ? '#00ffff' : '#ffffff',
+              }}
+            >
+              Resume
+            </NavLink>
+            <NavLink
+              to="/contact"
+              onHoverStart={() => setHoveredLink('contact')}
+              onHoverEnd={() => setHoveredLink(null)}
+              style={{
+                color: hoveredLink === 'contact' ? '#00ffff' : '#ffffff',
+              }}
+            >
+              Contact
+            </NavLink>
+          </NavLinks>
+        </Content>
+        <Routes>
+          <Route path="/resume" element={<Resume />} />
+          {/* Add other routes here as needed */}
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 
