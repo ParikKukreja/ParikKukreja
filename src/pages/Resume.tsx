@@ -143,9 +143,9 @@ const Resume: React.FC = () => {
         transition={{ duration: 0.5 }}
       >
         <NavLink to="/">Home</NavLink>
-        <NavLink to="#about">About</NavLink>
-        <NavLink to="#projects">Projects</NavLink>
-        <NavLink to="#contact">Contact</NavLink>
+        <NavLink to="/#about">About</NavLink>
+        <NavLink to="/#projects">Projects</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </NavMenu>
       <TitleBar>
         <Title>Resume</Title>

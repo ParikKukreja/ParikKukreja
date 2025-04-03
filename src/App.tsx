@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Resume from './pages/Resume';
+import Contact from './pages/Contact';
 
 const Container = styled.div`
   height: 100vh;
@@ -80,6 +81,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/resume" element={<Resume />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/"
           element={
@@ -93,7 +95,7 @@ function App() {
                 >
                   Parik Kukreja
                 </Title>
-                <NavLinks>
+                <NavLinks onMouseLeave={() => setHoveredLink(null)}>
                   <NavLink
                     to="#about"
                     onHoverStart={() => setHoveredLink('about')}
@@ -125,7 +127,7 @@ function App() {
                     Resume
                   </NavLink>
                   <NavLink
-                    to="#contact"
+                    to="/contact"
                     onHoverStart={() => setHoveredLink('contact')}
                     onHoverEnd={() => setHoveredLink(null)}
                     style={{
