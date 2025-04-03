@@ -20,7 +20,7 @@ const Resume: React.FC = () => {
   return (
     <ResumeContainer>
       <PDFViewer
-        src="/Personal-Website/main.pdf"
+        src="https://parikkukreja.github.io/Personal-Website/main.pdf"
         title="Resume"
       />
     </ResumeContainer>
