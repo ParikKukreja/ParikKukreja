@@ -57,7 +57,7 @@ Error generating stack: `+n.message+`
   width: 100%;
   height: 100%;
   border: none;
-`,Lx=()=>It.jsx(Bx,{children:It.jsx(Nx,{src:"/Personal-Website/main.pdf",title:"Resume"})}),Hx=nn.div`
+`,Lx=()=>It.jsx(Bx,{children:It.jsx(Nx,{src:"https://parikkukreja.github.io/Personal-Website/main.pdf",title:"Resume"})}),Hx=nn.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
