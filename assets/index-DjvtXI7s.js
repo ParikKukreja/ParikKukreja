@@ -79,6 +79,8 @@ Error generating stack: `+n.message+`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  opacity: ${a=>a.showResume?0:1};
+  transition: opacity 0.3s ease;
 `,Yx=nn(g0.h1)`
   font-size: 4rem;
   font-weight: 300;
@@ -114,4 +116,4 @@ Error generating stack: `+n.message+`
     transform: scaleX(1);
     transform-origin: left;
   }
-`;function Xx(){const[a,i]=F.useState(null),[u,r]=F.useState("");return window.addEventListener("hashchange",()=>{r(window.location.hash.slice(1))}),Gy.useEffect(()=>{r(window.location.hash.slice(1))},[]),It.jsxs(Hx,{children:[It.jsx(jx,{}),It.jsxs(qx,{children:[It.jsx(Yx,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:1},children:"Parik Kukreja"}),It.jsxs(Gx,{children:[It.jsx(su,{href:"#about",onHoverStart:()=>i("about"),onHoverEnd:()=>i(null),style:{color:a==="about"?"#00ffff":"#ffffff"},children:"About"}),It.jsx(su,{href:"#projects",onHoverStart:()=>i("projects"),onHoverEnd:()=>i(null),style:{color:a==="projects"?"#00ffff":"#ffffff"},children:"Projects"}),It.jsx(su,{href:"#resume",onHoverStart:()=>i("resume"),onHoverEnd:()=>i(null),style:{color:a==="resume"?"#00ffff":"#ffffff"},children:"Resume"}),It.jsx(su,{href:"#contact",onHoverStart:()=>i("contact"),onHoverEnd:()=>i(null),style:{color:a==="contact"?"#00ffff":"#ffffff"},children:"Contact"})]})]}),u==="resume"&&It.jsx(Lx,{})]})}rS.createRoot(document.getElementById("root")).render(It.jsx(F.StrictMode,{children:It.jsx(Xx,{})}));
+`;function Xx(){const[a,i]=F.useState(null),[u,r]=F.useState("");window.addEventListener("hashchange",()=>{r(window.location.hash.slice(1))}),Gy.useEffect(()=>{r(window.location.hash.slice(1))},[]);const c=u==="resume";return It.jsxs(Hx,{children:[It.jsx(jx,{}),It.jsxs(qx,{showResume:c,children:[It.jsx(Yx,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:1},children:"Parik Kukreja"}),It.jsxs(Gx,{children:[It.jsx(su,{href:"#about",onHoverStart:()=>i("about"),onHoverEnd:()=>i(null),style:{color:a==="about"?"#00ffff":"#ffffff"},children:"About"}),It.jsx(su,{href:"#projects",onHoverStart:()=>i("projects"),onHoverEnd:()=>i(null),style:{color:a==="projects"?"#00ffff":"#ffffff"},children:"Projects"}),It.jsx(su,{href:"#resume",onHoverStart:()=>i("resume"),onHoverEnd:()=>i(null),style:{color:a==="resume"?"#00ffff":"#ffffff"},children:"Resume"}),It.jsx(su,{href:"#contact",onHoverStart:()=>i("contact"),onHoverEnd:()=>i(null),style:{color:a==="contact"?"#00ffff":"#ffffff"},children:"Contact"})]})]}),c&&It.jsx(Lx,{})]})}rS.createRoot(document.getElementById("root")).render(It.jsx(F.StrictMode,{children:It.jsx(Xx,{})}));
