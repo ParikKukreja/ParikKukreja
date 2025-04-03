@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -59,11 +59,6 @@ const NavLink = styled(Link)`
   letter-spacing: 0.1em;
   position: relative;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
-  
-  &:hover {
-    color: #00ffff;
-  }
   
   &::after {
     content: '';
@@ -76,6 +71,10 @@ const NavLink = styled(Link)`
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    color: #00ffff;
   }
   
   &:hover::after {
@@ -135,8 +134,6 @@ const PDFContainer = styled.div`
 `;
 
 const Resume: React.FC = () => {
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-
   return (
     <Container>
       <GlowEffect />
@@ -145,46 +142,10 @@ const Resume: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <NavLink 
-          to="/"
-          onMouseEnter={() => setHoveredLink('home')}
-          onMouseLeave={() => setHoveredLink(null)}
-          style={{
-            color: hoveredLink === 'home' ? '#00ffff' : '#ffffff',
-          }}
-        >
-          Home
-        </NavLink>
-        <NavLink 
-          to="#about"
-          onMouseEnter={() => setHoveredLink('about')}
-          onMouseLeave={() => setHoveredLink(null)}
-          style={{
-            color: hoveredLink === 'about' ? '#00ffff' : '#ffffff',
-          }}
-        >
-          About
-        </NavLink>
-        <NavLink 
-          to="#projects"
-          onMouseEnter={() => setHoveredLink('projects')}
-          onMouseLeave={() => setHoveredLink(null)}
-          style={{
-            color: hoveredLink === 'projects' ? '#00ffff' : '#ffffff',
-          }}
-        >
-          Projects
-        </NavLink>
-        <NavLink 
-          to="#contact"
-          onMouseEnter={() => setHoveredLink('contact')}
-          onMouseLeave={() => setHoveredLink(null)}
-          style={{
-            color: hoveredLink === 'contact' ? '#00ffff' : '#ffffff',
-          }}
-        >
-          Contact
-        </NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="#about">About</NavLink>
+        <NavLink to="#projects">Projects</NavLink>
+        <NavLink to="#contact">Contact</NavLink>
       </NavMenu>
       <TitleBar>
         <Title>Resume</Title>
