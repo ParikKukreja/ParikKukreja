@@ -21,7 +21,7 @@ const GlowEffect = styled.div`
   pointer-events: none;
 `;
 
-const Content = styled.div`
+const Content = styled.div<{ showResume: boolean }>`
   position: relative;
   z-index: 1;
   height: 100%;
@@ -30,6 +30,8 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  opacity: ${props => props.showResume ? 0 : 1};
+  transition: opacity 0.3s ease;
 `;
 
 const Title = styled(motion.h1)`
@@ -87,10 +89,12 @@ function App() {
     setCurrentPage(window.location.hash.slice(1));
   }, []);
 
+  const showResume = currentPage === 'resume';
+
   return (
     <Container>
       <GlowEffect />
-      <Content>
+      <Content showResume={showResume}>
         <Title
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -141,7 +145,7 @@ function App() {
           </NavLink>
         </NavLinks>
       </Content>
-      {currentPage === 'resume' && <Resume />}
+      {showResume && <Resume />}
     </Container>
   );
 }
