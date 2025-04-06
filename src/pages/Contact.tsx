@@ -147,8 +147,8 @@ const Contact: React.FC = () => {
         transition={{ duration: 0.5 }}
       >
         <NavLink to="/">Home</NavLink>
-        <NavLink to="#about">About</NavLink>
-        <NavLink to="#projects">Projects</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
         <NavLink to="/resume">Resume</NavLink>
       </NavMenu>
       <TitleBar>

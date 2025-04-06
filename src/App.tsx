@@ -5,6 +5,7 @@ import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Projects from './pages/Projects';
 
 const Container = styled.div`
   height: 100vh;
@@ -84,6 +85,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
         <Route
           path="/"
           element={
@@ -109,7 +111,7 @@ function App() {
                     About
                   </NavLink>
                   <NavLink
-                    to="#projects"
+                    to="/projects"
                     onHoverStart={() => setHoveredLink('projects')}
                     onHoverEnd={() => setHoveredLink(null)}
                     style={{
