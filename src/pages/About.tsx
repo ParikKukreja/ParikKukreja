@@ -489,7 +489,6 @@ const About: React.FC = () => {
               <BulletItem>Star Wars</BulletItem>
               <BulletItem>Poker</BulletItem>
               <BulletItem>Online Gaming</BulletItem>
-              <BulletItem>Science Fiction</BulletItem>
               <BulletItem>Classic Rock</BulletItem>
             </BulletList>
           </Section>
