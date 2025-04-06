@@ -280,7 +280,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Neural Network Visualizer",
+    title: "Placeholder 1",
     description: "An interactive visualization tool for neural networks that helps understand how they process data and make predictions.",
     github: "https://github.com/username/neural-viz",
     dates: "Jan 2023 - Mar 2023",
@@ -293,7 +293,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Quantum Algorithm Simulator",
+    title: "Placeholder 2",
     description: "A simulator for quantum computing algorithms that demonstrates quantum principles like superposition and entanglement.",
     github: "https://github.com/username/quantum-sim",
     dates: "Apr 2023 - Jul 2023",
